@@ -1,6 +1,528 @@
-#root {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* #root{
+    min-width: 428px;
+    max-width: 428px;
+    width: 428px;
+    min-height: 926px;
+    max-height: 926px;
+    height: 926px;
+    position:absolute;
+    
+} */
+body{
+  margin: 0;
+  color:white;
+  font-family: 'Outfit', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+ 
+.App {
+  /* height: 926px;
+  width: 428px; */
+  color: white;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: spin infinite 50s linear;
+  }
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.wrapper {
+  height: 100%;
+  width: 428px;
+  overflow: hidden;
+  position: fixed;
+}
+
+.home {
+  background: rgb(255,134,179);
+  background: linear-gradient(115deg, rgba(255,134,179,1) 40.5%, rgba(255,232,74,1) 40.5%);
+  height: 100%;
+  width: 428px;
+}
+
+.pay {
+  background-color: #FF86B3;
+}
+
+.text-wrapper {
+  position: fixed;
+  top: 20vw;
+  width: inherit;
+}
+
+.text {
+  padding-top: 50px;
+}
+
+.button-wrapper {
+  position: fixed;
+  top: 85vw;
+  width: inherit;
+}
+
+.menu-bg {
+  background-color: #21E8E5;
+  height: inherit;
+}
+
+.prep {
+  background-color: #FFE84A;
+  height: 100%; 
+}
+
+.done {
+  background: rgb(33,232,229);
+  background: linear-gradient(230.5deg, rgba(33,232,229,1) 36%, rgba(87,57,214,1) 36%);
+}
+
+.start-page-bg{
+  background-image: url('./assets/images/sparkles.svg');
+  width: 100%;
+  height: 617px;
+  top: -15vw;
+  right: -2vw;
+  position: absolute;
+  background-position: 56% 123%;
+  background-size: 650px 650px;
+  background-repeat: no-repeat;
+  z-index: 1;
+  position: relative;
+}
+
+.start-page-donut1{
+  background-image: url('./assets/images/unicorn_dust.svg');
+  width: 244px;
+  height: 238px;
+  bottom: 70%;
+  right: 8%;
+  position: relative;
+  z-index: 2;
+}
+ 
+
+@media (prefers-reduced-motion: no-preference) {
+  .start-page-donut1 {
+    animation: spin infinite 40s linear;
+  }
+}
+
+.start-page-donut2{
+  background-image: url('./assets/images/true_blood.svg');
+  width: 293px;
+  height: 282px;
+  bottom: 74%;
+  left: 35%;
+  position: relative;
+  z-index: 3;
+
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .start-page-donut2 {
+    animation: spin infinite 130s linear;
+  }
+}
+
+.start-small-title {
+    text-align: right;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 900;
+    padding: 0px 8vw 0 15.5vw;
+    margin-top: 3vw;
+    z-index: 4;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 0px;
+}
+
+.start-big-title {
+  font-size: 97px;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  font-weight: 900;
+  padding-top: 0vw;
+  z-index: 4;
+  width: 330px; 
+  text-align: center;
+  margin: 5vw 7.1vw;
+  line-height: 0.75;
+}
+
+.shop {
+  margin-left: 2vw;
+}
+
+.start-btn{
+  background: #fff;
+  border: none;
+  color: #282828;
+  pointer-events: auto;
+  z-index: 4;
+  position: absolute;
+
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 72px;
+  width: 276px;
+  height: 76px;
+  margin: 0vw 76px 0 76px;
+  bottom: 4.8vw;
+}
+
+.text-warpper{
+  position: fixed;
+    height: 368px;
+    width: 427px; 
+    bottom: 0vw;
+}
+
+.menu-list-item {
+  display: inline-block; 
+  position: relative;
+  width: 100%;
+}
+
+.menu-list-item:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.menu-div{
+  padding: 10vw;
+  height: inherit;
+}
+
+.title-box {
+  width: 49%;
+  text-align: right;
+}
+
+.menu-title {
+  text-transform: uppercase;
+  /* padding: 30px 0 10px 0; */
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 38px;
+  text-align: right;
+  padding: 8px 7px 10px 0px;
+}
+
+.donut-box{
+  width: 44%;
+  margin: -6vw 0 0 13vw;
+}
+
+.menu-donut1 {
+  background-image: url('./assets/images/sky_shaped.svg');
+  width: 118px;
+  height: 118px;
+  z-index: 2;
+  position: fixed;
+  margin: -28.5vw 0 0 10vw;
+  
+}
+
+.menu-donut2 {
+  background-image: url('./assets/images/marble_magic.svg');
+  width: 118px;
+  height: 118px;
+  z-index: 2;
+  position: fixed;
+  margin: -28.5vw 0 0 10vw;
+}
+
+.menu-donut3 {
+  background-image: url('./assets/images/true_blood.svg');
+  width: 119px;
+  height: 114px;
+  z-index: 2;
+  position: fixed;
+  margin: -28.5vw 0 0 10vw;
+}
+
+.menu-donut4 {
+  background-image: url('./assets/images/unicorn_dust.svg');
+  width: 120px;
+  height: 116px;
+  z-index: 2;
+  position: fixed;
+  margin: -28.5vw 0 0 10vw;
+
+}
+
+.menu-small-title {
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 900;
+  line-height: 0.3;
+  font-family: 'Outfit';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+margin: 4.5vw -0.2vw 0px 0vw;
+}
+
+.menu-big-title {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 96px;
+  line-height: 72px;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 2px; 
+  line-height: 1;
+  margin: 0vw 0vw 0 3.3vw;
+}
+
+.column1 {
+  float: left;
+  width: 52%;
+  padding: 14px; 
+}
+
+.column2 {
+  float: right;
+  width: 48%;
+}
+.row {
+  margin: 0.3vw 0 2.7vw 0;
+  height: 170px;
+}
+
+.rows {
+  margin: 2.3vw 0 0 0;
+  height: inherit;
+  padding-top: 45px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.elements3{
+    position: fixed;
+    height: 100%;
+    width: 428px; 
+    bottom: 0.7vw;
+    z-index: 5;
+    overflow: hidden;
+  }
+
+.payment-div {
+  overflow: hidden;
+  width: 100%;
+  height: inherit;
+}
+
+.payment-page-donut1{
+  background-image: url('./assets/images/sky_shaped.svg');
+  width: 220px;
+  height: 220px;
+  background-repeat: no-repeat;
+  position: fixed;
+  z-index: 2;
+  margin: 3vw 0 0 -25vw;
+  bottom: 10vw;
+}
+
+.payment-page-donut2{
+    background-image: url('./assets/images/unicorn_dust.svg');
+    width: 250px;
+    height: 248px;
+    margin: -5vw 0 0 60vw;
+    position: fixed;
+    background-repeat: no-repeat;
+    bottom: -15vw;
+  }
+
+.donut-mid-title {
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 0.5;
+  z-index: 4;
+  width: 330px; 
+  text-align: center;
+  margin: 0.8vw 5vw 1.8vw 17vw;
+  letter-spacing: 2px;
+}
+
+.donut-small-title {
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  font-weight: 900;
+  line-height: 0.3;
+  /* padding: 0vw 0 0 9.4vw; */
+  z-index: 4;
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 72px;
+  margin: -2.9vw 18vw 0 0;
+}
+
+.donut-big-title {
+  font-size: 97px;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  font-weight: 900;
+  line-height: 0.55;
+  z-index: 4;
+  width: 330px; 
+  text-align: center;
+  margin: -1.5vw 14.5vw;
+
+}
+
+.apple-btn{
+    background: #fff;
+    border: none;
+    color: #282828;
+    pointer-events: auto;
+    z-index: 4; 
+    background-image: url('./assets/images/apple-pay.png');
+    background-position: 52% 52%;
+    background-size: 123px 119px;
+    background-repeat: no-repeat;
+    width: 276px;
+    height: 76px;
+    margin: 2.9vw 76px 30px 76px;; 
+}
+
+.gpay-btn{
+  background: #fff;
+  border: none;
+  color: #282828;
+  pointer-events: auto;
+  z-index: 4; 
+  background-image: url('./assets/images/google-pay.png');
+  background-position: 49% 38%;
+  background-size: 119px 107px;
+  background-repeat: no-repeat;
+  width: 276px;
+  height: 76px;
+  margin: 1vw 76px 0 76px;
+}
+
+.elements{
+  position: fixed;
+  height: 778px;
+  width: 427px;
+  bottom: 0vw;
+  z-index: 5;
+}
+
+.payment-page-donut{ 
+  background-image: url('./assets/images/true_blood.svg');
+  width: 300px;
+  height: 290px;  
+  margin: 0 auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .payment-page-donut {
+    animation: spin infinite 40s linear;
+  }
+}
+
+.payment-big-title {
+  font-size: 40px;
+  letter-spacing: 0px;
+  font-weight: 900;
+  padding-top: 0vw;
+  z-index: 4;
+  line-height: 1.07;
+  letter-spacing: 0;
+  margin: 4vw auto;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 3px rgba(5,2,1,0.67);
+}
+
+.payment-big-title2 {
+    font-size: 40px;
+    letter-spacing: 0px;
+    font-weight: 900;
+    padding-top: 10vw;
+    padding-right: 20px;
+    z-index: 4;
+    line-height: 1.07;
+    letter-spacing: 0;
+    margin: 4vw 0vw;
+    text-align: right;
+    color: white;
+}
+
+.payment-page-bg {
+  background-image: url(./assets/images/sparkles.svg);
+  width: 100%;
+  height: 890px;
+  top: -15vw;
+  right: 0vw;
+  position: absolute;
+  background-position: 45% 10%;
+  background-size: 741px 741px;
+  background-repeat: no-repeat;
+  z-index: 1;
+  position: relative;
+}
+
+.elements2 {
+  position: fixed;
+  height: 778px;
+  width: 427px;
+  bottom: 0vw;
+  z-index: 5;
+} 
+
+.done-btn{
+  background: #fff;
+  border: none;
+  color: #282828;
+  pointer-events: auto;
+  z-index: 4;
+  position: absolute;
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 72px;
+  width: 276px;
+  height: 76px;
+  margin: 0vw 76px 0 76px;
+  bottom: 20vw;
 }

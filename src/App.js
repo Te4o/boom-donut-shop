@@ -1,21 +1,29 @@
-import "./App.css";
+import React from "react";
+import './App.css'
+import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
+import HomePage from "./assets/components/pages/HomePage";
+import MenuPage from "./assets/components/pages/MenuPage";
+import PaymentPage from "./assets/components/pages/PaymentPage";
+import PickUp from "./assets/components/pages/PickUp";
+import Preparation from "./assets/components/pages/Preparation";
 
 function App() {
   return (
-    <div className="App">
-      <section class="hero">
-        <div class="hero-body">
-          <p class="title">A React Task</p>
-          <p class="subtitle">by Boom.dev</p>
-        </div>
-      </section>
-      <div class="container is-fullhd">
-        <div class="notification">
-          Edit the <code>./src</code> folder to add components.
-        </div>
-      </div>
-    </div>
+    <Router>            
+      <Routes>
+          <Route exact path="/" element={<HomePage />} />
+          <Route path="/menu" element={<MenuPage />} />
+          <Route path="/payment" element={<PaymentPage/>} />
+          <Route path="/preparation" element={<Preparation />} />
+          <Route path="/pickup" element={<PickUp/>} />
+      </Routes>      
+    </Router>
   );
+}
+if(window.location.pathname == '/preparation'){
+  setTimeout(() => {
+    window.location.pathname = '/pickup'
+  }, 5000);
 }
 
 export default App;
